@@ -12,23 +12,25 @@ import codeWarsIcon from '../../assets/photos&images/experienceImages/codewars.s
 import w3schoolsIcon from '../../assets/photos&images/experienceImages/w3schools.svg';
 import nodeJsIcon from '../../assets/photos&images/experienceImages/node.svg';
 
+// moj-komentar - jos jedan primer ove deklaracije
+const iconsArr = [
+  { name: 'Html', img: htmlIcon },
+  { name: 'Css', img: cssIcon },
+  { name: 'Javascript', img: jsIcon },
+  { name: 'Node Js', img: nodeJsIcon },
+  { name: 'Git', img: gitIcon },
+  { name: 'Material UI', img: materialIcon },
+  { name: 'Bootstrap', img: bootstrapIcon },
+  { name: 'React Js', img: reactIcon }
+];
+const iconsArr2 = [
+  { name: 'Youtube', img: youtubeIcon },
+  { name: 'Coursera', img: courseraIcon },
+  { name: 'CodeWars', img: codeWarsIcon },
+  { name: 'W3Schools', img: w3schoolsIcon }
+];
+
 const Experience = ({ sxStyles, width }) => {
-  const iconsArr = [
-    { name: 'Html', img: htmlIcon },
-    { name: 'Css', img: cssIcon },
-    { name: 'Javascript', img: jsIcon },
-    { name: 'Node Js', img: nodeJsIcon },
-    { name: 'Git', img: gitIcon },
-    { name: 'Material UI', img: materialIcon },
-    { name: 'Bootstrap', img: bootstrapIcon },
-    { name: 'React Js', img: reactIcon }
-  ];
-  const iconsArr2 = [
-    { name: 'Youtube', img: youtubeIcon },
-    { name: 'Coursera', img: courseraIcon },
-    { name: 'CodeWars', img: codeWarsIcon },
-    { name: 'W3Schools', img: w3schoolsIcon }
-  ];
   return (
     <Card sx={sxStyles.mainCard1} id='experience' name='Experience'>
       <CardContent sx={sxStyles.experienceComp}>

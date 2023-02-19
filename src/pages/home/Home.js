@@ -5,6 +5,15 @@ import Experience from './Experience';
 import Contact from './Contact';
 import { Grid, Container } from '@mui/material';
 
+const aboutMain = {
+  display: 'flex',
+  gap: '90px',
+  flexDirection: 'column',
+  justifyContent: 'space-evenly',
+  alignItems: 'center',
+  position: 'static'
+};
+
 const Home = ({ sidebarItems, sxStyles, width }) => {
   return (
     <div
@@ -19,7 +28,7 @@ const Home = ({ sidebarItems, sxStyles, width }) => {
           </Grid>
         )}
         <Grid item xs={12} sm={10}>
-          <Container className='aboutMain' sx={sxStyles.aboutMain}>
+          <Container className='aboutMain' sx={aboutMain}>
             <About
               sidebarItems={sidebarItems}
               sxStyles={sxStyles}

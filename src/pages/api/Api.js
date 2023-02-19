@@ -1,18 +1,28 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { apiStyles } from '../../assets/apiStyles';
 import axios from 'axios';
-import Photos from './Photos';
 import { Typography, Container, Grid } from '@mui/material';
 import Pagination from '@mui/material/Pagination';
+
+import { apiStyles } from '../../assets/apiStyles';
+import Photos from './Photos';
 import Filters from './Filters';
 import DefaultPhotos from './DefaultPhotos';
+
+// moj-komentar - kada importujes neke biblioteke i komponente, gledaj da razdvojis ove importe na neke celine,
+// npr gore sam prvo importivao ove react stvari, pa onda iz ovih instaliranih biblioteka, pa na kraju ovaj neki tvoj kod
+// ovo ti dosta pomaze da kod bude citljiviji i da se lakse snalazis u njemu, inace postoje mehanizmi da se ovo automatski kontrolise, al necu da te davim sa time
+
 const Api = ({ width }) => {
   const [num, setNum] = useState(1);
   const [pic, setPic] = useState([]);
   const [hidePagination, setHidePagination] = useState(true);
 
+  // moj-komentar - ovde sam izmestio ovaj poziv i ove state-ve u ovu komponentu
+  // to i jeste poenta react komponenti, da logiku vezanu za odredjene komponente smestis u same te komponente, pa da npr reuse-jes,
+  // a i da ne budzis svu logiku u jedan glavni fajl, pa da samo prosledjujes dalje
+  // to narocito vazi kad imas state kao ovaj hidePagination, koji ti je bio na glavnoj komponenti, pa si onda prosledjivao i njegov seter na child
+  // a apsolutno ga nigde nisi koristio u samoj parent komponenti, niti je ikako uticao na rad same te komponente
   let api = `http://localhost:5000/photos?_page=${num}&_limit=8`;
   useEffect(() => {
     axios
@@ -20,7 +30,7 @@ const Api = ({ width }) => {
       .then(res => setPic(res.data))
       .catch(err =>
         window.alert('Start server for images using npr server or yarn server.')
-      );
+      ); // moj-komentar - ovde sam dodao catch u slucaju da nije pokrenut server za slike
   }, [num]);
 
   return (
@@ -88,7 +98,7 @@ const Api = ({ width }) => {
           spacing={2}
           sx={{ margin: '0.7rem auto 0 auto' }}
         >
-          <Photos apiStyles={apiStyles} pic={pic} width={width} />
+          <Photos pic={pic} width={width} />
         </Grid>
       </Grid>
     </div>

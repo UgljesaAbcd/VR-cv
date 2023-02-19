@@ -87,6 +87,9 @@ const Contact = ({ sxStyles, width }) => {
                 label='Your Name'
                 name='to_name'
                 color='myColors3'
+                sx={{
+                  input: { backgroundColor: '#173B6E', borderRadius: '4px' }
+                }}
               />
               <TextField
                 type='email'
@@ -94,6 +97,9 @@ const Contact = ({ sxStyles, width }) => {
                 label='Your Email'
                 name='from_name'
                 color='myColors3'
+                sx={{
+                  input: { backgroundColor: '#173B6E', borderRadius: '4px' }
+                }}
               />
             </Grid>
             <TextField
@@ -102,6 +108,12 @@ const Contact = ({ sxStyles, width }) => {
               multiline
               rows={width < 376 ? 2 : 4}
               color='myColors3'
+              sx={{
+                '& .MuiInputBase-root': {
+                  backgroundColor: '#173B6E',
+                  borderRadius: '4px'
+                }
+              }}
             />
 
             <Button variant='outlined' color='myColors3'>

@@ -1,18 +1,53 @@
-import { Grid, Card, CardMedia, CardContent, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-const Photos = ({ apiStyles, pic, width }) => {
-  const photoProp = {
-    margin: width < 900 ? '0 auto 0 auto' : ''
-  };
 
+import {
+  Grid,
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  styled
+} from '@mui/material';
+
+// moj-komentar - primeri styled component-i
+const StyledCard = styled(Card)(() => ({
+  border: '2px solid transparent',
+  '&:hover': {
+    border: 'solid 2px #F6BE3B'
+  },
+  backgroundColor: 'rgba(0,146,255,0.5)',
+  '& .MuiTypography-root': {
+    color: 'white'
+  }
+}));
+
+const StyledCardContent = styled(CardContent)(() => ({
+  color: 'white',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center'
+}));
+
+const Photos = ({ pic, width }) => {
   return (
     <>
       {pic.map(item => (
-        <Grid item xs={8} md={3} key={item.id} sx={photoProp}>
+        <Grid
+          item
+          xs={8}
+          md={3}
+          key={item.id}
+          sx={{ margin: width < 900 ? '0 auto 0 auto' : '' }}
+        >
           <Link style={{ textDecoration: 'none' }} to={`/api/${item.id}`}>
-            <Card sx={apiStyles.photoItem}>
-              <CardMedia component='img' height='250px' src={item.image} />
-              <CardContent sx={apiStyles.photoContent}>
+            <StyledCard>
+              <CardMedia
+                sx={{}}
+                component='img'
+                height='250px'
+                src={item.image}
+              />
+              <StyledCardContent>
                 <Typography
                   align='center'
                   color='#0A192F'
@@ -28,8 +63,8 @@ const Photos = ({ apiStyles, pic, width }) => {
                 >
                   {item.location}
                 </Typography>
-              </CardContent>
-            </Card>
+              </StyledCardContent>
+            </StyledCard>
           </Link>
         </Grid>
       ))}

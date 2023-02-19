@@ -3,7 +3,7 @@ import profile from '../../assets/photos&images/profile.jpg';
 
 const About = ({ width, sxStyles }) => {
   return (
-    <Card sx={sxStyles.mainCard1} name='About'>
+    <Card sx={{ ...sxStyles.mainCard1, paddingTop: '120px' }} name='About'>
       <Avatar alt='Veljko Radivojevic' src={profile} sx={sxStyles.profilePic} />
       <CardContent>
         <Typography sx={{ fontSize: width < 360 && '1.1rem', opacity: 0.9 }}>

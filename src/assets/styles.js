@@ -31,19 +31,6 @@ export const sxStyles = {
   },
   //Navbar end
 
-  //Home Component start
-  aboutMain: {
-    display: 'flex',
-    gap: '90px',
-    flexDirection: 'column',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    position: 'static',
-    paddingTop: '90px',
-    paddingBottom: '90px'
-  },
-  //Home Component end
-
   //Sidebar Component start
   sidebarList: {
     position: 'sticky',
@@ -80,7 +67,7 @@ export const sxStyles = {
     paddingRight: '0.5rem',
     maxWidth: 500,
     width: '100%',
-    height: '100%',
+    // height: '100%',
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: 'column',
@@ -109,7 +96,7 @@ export const sxStyles = {
   },
   divColored: {
     backgroundColor: '#0092FF',
-    borderRadius: '20px',
+    borderRadius: '5px',
     padding: '10px 10px 10px 15px'
   },
   //Education Component end
@@ -120,7 +107,7 @@ export const sxStyles = {
     paddingRight: '0.5rem',
     maxWidth: 500,
     width: '100%',
-    height: '80vh',
+    // height: '80vh',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',

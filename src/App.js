@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Navbar from './components/Navbar';
 import Home from './pages/home/Home';
@@ -84,9 +83,7 @@ function App() {
             element={<PhotoDetail width={width} />}
           ></Route>
 
-          <Route path='/game' element={<Game wiDth={width} />}>
-            {' '}
-          </Route>
+          <Route path='/game' element={<Game wiDth={width} />}></Route>
         </Routes>
       </div>
     </BrowserRouter>
